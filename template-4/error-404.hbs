@@ -1,0 +1,68 @@
+{{!< default}}
+
+<section class="sr-hero-outer">
+  <div class="sr-hero-inner">
+    <p class="sr-404">404</p>
+    <div class="sr-hero-text">
+      <h1 class="sr-hero-title">Sorry, you need to go back.</h1>
+      <p class="sr-hero-desc">We can't find what you are looking for.</p>
+    </div>
+    <a class="sr-home-button" href="{{@site.url}}">Return back home</a>
+    {{!-- Replace with the path to your own image if needed --}}
+    <img class="arrow-img" src="{{asset "images/arrow.svg"}}" alt="Arrow icon pointing to the home button">
+  </div>
+</section>
+
+<style>
+  .sr-hero-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+  }
+  .sr-hero-inner {
+    position: relative;
+    text-align: center;
+  }
+  .sr-404 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: clamp(10rem, 45vw, 50rem);
+    opacity: 0.03;
+    pointer-events: none;
+  }
+  .sr-home-button {
+    display: inline-block;
+    margin-top: clamp(8rem, 55vw, 50rem);
+    background-color: var(--ghost-accent-color);
+    color: white;
+    border-radius: 10px;
+    padding: .8em 1.4em;
+    font-weight: 600;
+    font-size: clamp(1.1rem, 2vw, 1.5rem);
+  }
+  .sr-hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 600px;
+  }
+  .sr-hero-title {
+    font-size: clamp(1.9rem, 4vw, 4rem);
+  }
+  .sr-hero-desc {
+    font-size: clamp(1.3rem, 2.4vw, 2.2rem);
+  }
+  .arrow-img {
+    position: absolute;
+    pointer-events: none;
+    opacity: 0.7;
+    width: clamp(6rem, 18vw, 15rem);
+    top: 93%;
+    left: 110%;
+  }
+</style>

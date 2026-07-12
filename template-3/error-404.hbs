@@ -1,0 +1,50 @@
+{{!< default}}
+
+<section class="sr-hero-outer">
+  <div class="sr-hero-inner">
+    {{!-- Replace with the path to your own image if needed --}}
+    <img class="box-img" src="{{asset "images/404_illustration.png"}}" alt="404 box illustration">
+    <h1 class="sr-hero-title">Oops! Nothing here</h1>
+    <p class="sr-hero-desc">The page may have moved, or it never existed. Let's get you back.</p>
+    <a class="sr-home-button" href="{{@site.url}}">Take me home</a>
+  </div>
+</section>
+
+<aside class="read-more-wrap outer">
+  <div class="read-more inner">
+    {{#get "posts" include="authors" limit="3" as |more_posts|}}
+      {{#if more_posts}}
+        {{#foreach more_posts}}
+          {{> "post-card"}}
+        {{/foreach}}
+      {{/if}}
+    {{/get}}
+  </div>
+</aside>
+
+<style>
+  .sr-hero-outer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 60vh;
+  }
+  .sr-hero-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+  .box-img {
+    width: clamp(150px, 40vw, 300px);
+  }
+  .sr-home-button {
+    background-color: var(--ghost-accent-color);
+    color: white;
+    border: 0;
+    border-radius: 100px;
+    padding: .8em 1.4em;
+    margin-top: 10px;
+  }
+</style>
